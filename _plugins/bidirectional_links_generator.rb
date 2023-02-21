@@ -58,7 +58,13 @@ class BidirectionalLinksGenerator < Jekyll::Generator
           anchor_tag
         )
       end
-
+      # 图片
+      current_note.content = current_note.content.gsub(
+        /\[\[(Pasted image.+)\]\]/i, # match on the remaining double-bracket links
+        <<~HTML.delete("\n") # replace with this HTML (\\1 is what was inside the brackets)
+            "<img class='internal-link' src='assets/\\1' \>
+        HTML
+      )
       # At this point, all remaining double-bracket-wrapped words are
       # pointing to non-existing pages, so let's turn them into disabled
       # links by greying them out and changing the cursor

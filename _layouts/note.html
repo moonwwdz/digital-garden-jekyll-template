@@ -6,19 +6,20 @@ layout: default
   <div>
     <h1>{{ page.title }}</h1>
     <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{% if page.type != 'pages' %}
-      Last updated on {{ page.last_modified_at | date: "%B %-d, %Y" }}
+      更新于： {{ page.last_modified_at | date: "%Y-%m-%d" }}
       {% endif %}
+      &nbsp;&nbsp;总字数：{{ content | strip_html | strip_newlines | size }} &nbsp;&nbsp;  阅读时间：{{ content | strip_html | strip_newlines | size | divided_by:350 | round }}分钟
     </time>
   </div>
 
   <div id="notes-entry-container">
     <content>
       {{ content }}
-      <p>This line appears after every note.</p>
+      <!--p>This line appears after every note.</p-->
     </content>
 
     <side style="font-size: 0.9em">
-      <h3 style="margin-bottom: 1em">Notes mentioning this note</h3>
+      <h3 style="margin-bottom: 1em">关联笔记</h3>
       {% if page.backlinks.size > 0 %}
       <div style="display: grid; grid-gap: 1em; grid-template-columns: repeat(1fr);">
       {% for backlink in page.backlinks %}
@@ -32,7 +33,7 @@ layout: default
 
       <div style="font-size: 0.9em">
         <p>
-          There are no notes linking to this note.
+          没有关联笔记
         </p>
       </div>
       {% endif %}
@@ -42,6 +43,6 @@ layout: default
 
 <hr>
 
-<p>Here are all the notes in this garden, along with their links, visualized as a graph.</p>
+<p><b>图谱：</b></p>
 
 {% include notes_graph.html %}

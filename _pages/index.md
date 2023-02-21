@@ -13,8 +13,10 @@ permalink: /
 
 - 💡[[卡片笔记与内化知识]]
 - 🌴[[历史、地理知识收集]]
+- 💰[[计划经济]]
+- 🗣️[[东腔西调]]
 
-<strong>Recently updated notes</strong>
+<strong>最近更新的笔记：</strong>
 
 <ul>
   {% assign recent_notes = site.notes | sort: "last_modified_at_timestamp" | reverse %}
