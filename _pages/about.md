@@ -4,6 +4,10 @@ title: About
 permalink: /about
 ---
 
-*This is an about page.*
+*卡片盒的介绍*
 
-Feel free to tell the world about what you love! 😍
+突然有一天想要好好学习了，但已经看不进去书了，研究半天热情就消散了。
+
+直到看到了[[《卡片笔记写作法》]]这本书，开始认真的思考了如何才能做好笔记，让自己的学习更有效率。
+
+
